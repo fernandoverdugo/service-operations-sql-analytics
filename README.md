@@ -79,6 +79,42 @@ Selected results:
 
 [Read the Milestone 2 findings](docs/MILESTONE2_TRENDS_COHORTS.md)
 
-## Next milestone
+## Milestone 3 — dashboard marts and stakeholder reporting
 
-Milestone 3 will convert the validated SQL outputs into dashboard-ready analytical marts and a stakeholder-facing visualization layer.
+**Complete**
+
+The reporting layer now includes three dedicated SQL marts:
+
+- executive KPI mart
+- monthly trend mart
+- site/program performance mart
+
+The repository also includes a lightweight stakeholder dashboard generated from validated analytical summaries.
+
+![Service Operations Dashboard preview](docs/figures/dashboard_preview.svg)
+
+[Open the dashboard HTML](docs/dashboard.html)
+
+[Read the Milestone 3 findings](docs/MILESTONE3_DASHBOARD.md)
+
+## Current status
+
+The core analyst workflow is complete:
+
+```text
+synthetic relational data
+        ↓
+SQLite operational database
+        ↓
+SQL KPI + funnel analysis
+        ↓
+monthly trends + cohorts
+        ↓
+window-function rankings
+        ↓
+dashboard-ready marts
+        ↓
+stakeholder dashboard
+```
+
+The remaining work is portfolio presentation and repository hardening: executive summary, reproducibility instructions, integrity validation, and licensing.
