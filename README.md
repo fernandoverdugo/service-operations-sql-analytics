@@ -40,7 +40,7 @@ This project is intentionally designed around the work expected of a Data Analys
 - window functions
 - site and program comparisons
 - dashboard-ready marts
-- executive recommendations
+- executive reporting
 
 Machine learning is not the centerpiece. The goal is to demonstrate strong operational analytics and stakeholder-facing SQL work.
 
@@ -154,6 +154,7 @@ python src/generate_synthetic_data.py
 python src/build_service_db.py
 python src/summarize_milestone1.py
 python src/summarize_milestone2.py
+python src/build_dashboard.py
 python src/validate_dashboard.py
 python src/validate_dataset.py
 
