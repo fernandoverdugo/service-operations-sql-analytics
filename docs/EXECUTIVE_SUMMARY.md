@@ -1,6 +1,6 @@
 # Executive Summary
 
-## What this project demonstrates
+## Analytical scope
 
 This project simulates a multi-site public-service organization and shows how a Data Analyst can move from normalized operational tables to stakeholder-ready reporting.
 
@@ -17,7 +17,7 @@ The project emphasizes:
 - repeat-service behavior
 - SQL window functions
 - dashboard marts
-- stakeholder-facing visualization
+- management-facing visualization
 - reproducible validation
 
 All data are synthetic.
@@ -71,7 +71,7 @@ Hotline has the lowest:
 - 79.6% intake conversion
 - 61.3% service conversion
 
-These are synthetic differences used to demonstrate comparative operational analysis.
+These are synthetic differences used to illustrate comparative operational analysis.
 
 ## Client journey and cohort analysis
 
@@ -110,9 +110,9 @@ The analytical outputs point to four practical follow-up questions a manager cou
 3. **Appointment friction:** what operational factors contribute to the 16.6% no-show rate?
 4. **Trend stability:** does the latest 66.7% rolling three-month service-conversion rate indicate stable performance or an emerging change?
 
-These are investigation priorities rather than causal conclusions. The project demonstrates how an analyst moves from KPI reporting to operational questions that can guide deeper review.
+These are investigation priorities rather than causal conclusions. The analysis moves from KPI reporting to operational questions that can guide deeper review.
 
-## SQL techniques demonstrated
+## SQL techniques
 
 The project includes practical examples of:
 
@@ -138,7 +138,7 @@ Three dedicated dashboard marts separate business logic from presentation:
 2. monthly trend mart
 3. site/program performance mart
 
-These feed a concise stakeholder-facing HTML dashboard.
+These feed a concise management-facing HTML dashboard.
 
 This architecture keeps KPI definitions in SQL rather than embedding them inside visualization code.
 
@@ -148,8 +148,8 @@ This architecture keeps KPI definitions in SQL rather than embedding them inside
 
 ## Bottom line
 
-The project demonstrates the end-to-end workflow expected of an operational Data Analyst:
+The project connects the end-to-end workflow from relational data through operational reporting:
 
 **relational data → SQL analysis → validated KPIs → cohorts and rankings → dashboard marts → stakeholder reporting**
 
-It complements the portfolio's research and predictive-modeling projects by emphasizing SQL, operational decision support, and business-facing communication.
+It complements more research-oriented and predictive projects by emphasizing SQL, operational decision support, and management-facing communication.
