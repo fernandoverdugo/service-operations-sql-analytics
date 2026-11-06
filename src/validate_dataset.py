@@ -126,8 +126,23 @@ def main():
     if not repeat["repeat_referral_flag"].isin([0, 1]).all():
         raise RuntimeError("Invalid repeat-referral flag.")
 
-    if len(cohorts) != 18:
-        raise RuntimeError("Expected 18 first-referral cohort months.")
+    max_referral_date = pd.to_datetime(
+        referrals["referral_date"]
+    ).max()
+    latest_eligible_date = max_referral_date - pd.Timedelta(days=90)
+    cohort_months = pd.PeriodIndex(
+        cohorts["cohort_month"],
+        freq="M",
+    )
+    if cohort_months.max() > latest_eligible_date.to_period("M"):
+        raise RuntimeError(
+            "90-day cohort output includes right-censored cohorts."
+        )
+
+    if len(cohorts) < 12:
+        raise RuntimeError(
+            "Unexpectedly few eligible referral cohort months."
+        )
 
     if len(rankings) != expected_groups:
         raise RuntimeError("Site/program ranking group count mismatch.")
