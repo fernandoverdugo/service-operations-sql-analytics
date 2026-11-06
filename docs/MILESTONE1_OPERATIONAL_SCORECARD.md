@@ -73,4 +73,4 @@ Milestone 1 demonstrates:
 
 **Complete**
 
-Milestone 2 extends the SQL layer with monthly trends, cohort analysis, repeat-service behavior, and window-function-based ranking.
+Milestone 1 is retained as the operational foundation for the completed project. Later layers add monthly trends, cohorts, ranked performance, dashboard marts, and stakeholder reporting.
