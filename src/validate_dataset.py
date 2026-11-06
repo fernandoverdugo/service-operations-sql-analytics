@@ -32,6 +32,13 @@ def main():
         PROCESSED / "appointment_performance.csv"
     )
     sla = pd.read_csv(PROCESSED / "sla_performance.csv")
+    executive = pd.read_csv(PROCESSED / "executive_scorecard.csv")
+    channels = pd.read_csv(PROCESSED / "referral_channel_funnel.csv")
+    summary = json.loads(
+        (PROCESSED / "milestone1_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
 
     assert_unique(clients, ["client_id"], "clients")
     assert_unique(referrals, ["referral_id"], "referrals")
@@ -77,6 +84,15 @@ def main():
 
     if appointments_out.empty:
         raise RuntimeError("Appointment performance output is empty.")
+
+    if len(executive) != 1:
+        raise RuntimeError("Executive scorecard should contain one row.")
+
+    if len(channels) != profile["referral_channels"]:
+        raise RuntimeError("Referral-channel funnel count mismatch.")
+
+    if summary["executive_scorecard"]["referrals"] != len(referrals):
+        raise RuntimeError("Milestone summary referral count mismatch.")
 
     if not funnel["referral_to_intake_rate"].between(0, 1).all():
         raise RuntimeError("Invalid referral-to-intake rate.")
