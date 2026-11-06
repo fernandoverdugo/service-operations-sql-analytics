@@ -101,6 +101,17 @@ Lowest include:
 - Central / Housing Support — **59.9%**
 - Central / Employment — **62.0%**
 
+## Management priorities
+
+The analytical outputs point to four practical follow-up questions a manager could investigate in the synthetic scenario:
+
+1. **Hotline conversion:** why does the Hotline channel have the lowest referral-to-service conversion at 61.3%?
+2. **Housing Support performance:** why do West / Housing Support and Central / Housing Support rank at the bottom of site/program service conversion?
+3. **Appointment friction:** what operational factors contribute to the 16.6% no-show rate?
+4. **Trend stability:** does the latest 66.7% rolling three-month service-conversion rate indicate stable performance or an emerging change?
+
+These are investigation priorities rather than causal conclusions. The project demonstrates how an analyst moves from KPI reporting to operational questions that can guide deeper review.
+
 ## SQL techniques demonstrated
 
 The project includes practical examples of:
