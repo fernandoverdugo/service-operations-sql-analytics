@@ -85,8 +85,7 @@
     }
   ],
   "provenance": {
-    "workflow_run_id": 42248529919,
-    "head_sha": "f2bf8c3aa87f88f4aabbb194f08805dcbb524ea7",
-    "note": "Deterministic synthetic service-operations analysis using seed 699. Ninety-day cohort comparisons include only fully observed cohort months."
+    "seed": 699,
+    "note": "Deterministic synthetic service-operations analysis. Ninety-day cohort comparisons include only fully observed cohort months."
   }
 }
