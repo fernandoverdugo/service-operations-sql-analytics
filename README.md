@@ -112,7 +112,9 @@ The repository also includes a lightweight stakeholder dashboard generated from 
 
 ![Service Operations Dashboard preview](docs/figures/dashboard_preview.svg)
 
-[Open the dashboard HTML](docs/dashboard.html)
+**[View the Live Dashboard](https://fernandoverdugo.github.io/service-operations-sql-analytics/dashboard.html)**
+
+[View the dashboard source](docs/dashboard.html)
 
 [Read the Milestone 3 findings](docs/MILESTONE3_DASHBOARD.md)
 
@@ -183,7 +185,8 @@ tests/           smoke and project-quality tests
 - [Milestone 1 — Operational Scorecard & Funnel](docs/MILESTONE1_OPERATIONAL_SCORECARD.md)
 - [Milestone 2 — Trends, Cohorts & Ranked Performance](docs/MILESTONE2_TRENDS_COHORTS.md)
 - [Milestone 3 — Dashboard Marts & Stakeholder Reporting](docs/MILESTONE3_DASHBOARD.md)
-- [Dashboard HTML](docs/dashboard.html)
+- [Live Dashboard](https://fernandoverdugo.github.io/service-operations-sql-analytics/dashboard.html)
+- [Dashboard Source](docs/dashboard.html)
 
 ## Responsible use
 
