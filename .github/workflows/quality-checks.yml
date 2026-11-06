@@ -12,20 +12,47 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-python@v7
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
         with:
           python-version: "3.14"
           cache: pip
-      - run: python -m pip install -r requirements.txt
-      - run: python -m compileall -q src tests
-      - run: python -m pytest -q
-      - run: python src/validate_project.py
-      - run: python src/generate_synthetic_data.py
-      - run: python src/build_service_db.py
-      - run: python src/summarize_milestone1.py
-      - run: python src/summarize_milestone2.py
-      - run: python src/build_dashboard.py
-      - run: python src/validate_dashboard.py
-      - run: python src/validate_dataset.py
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Compile Python sources
+        run: python -m compileall -q src tests
+
+      - name: Generate synthetic data
+        run: python src/generate_synthetic_data.py
+
+      - name: Build SQLite database and SQL outputs
+        run: python src/build_service_db.py
+
+      - name: Build analytical summaries
+        run: |
+          python src/summarize_milestone1.py
+          python src/summarize_milestone2.py
+
+      - name: Build stakeholder dashboard
+        run: python src/build_dashboard.py
+
+      - name: Validate generated data and dashboard
+        run: |
+          python src/validate_dashboard.py
+          python src/validate_dataset.py
+
+      - name: Run tests
+        run: python -m pytest -q
+
+      - name: Validate repository integrity
+        run: python src/validate_project.py
+
+      - name: Verify committed analytical artifacts are current
+        run: git diff --exit-code -- data/metadata docs/dashboard.html
