@@ -134,9 +134,10 @@ def main():
         cohorts["cohort_month"],
         freq="M",
     )
-    if cohort_months.max() > latest_eligible_date.to_period("M"):
+    latest_cohort_end = cohort_months.max().to_timestamp(how="end").normalize()
+    if latest_cohort_end > latest_eligible_date.normalize():
         raise RuntimeError(
-            "90-day cohort output includes right-censored cohorts."
+            "90-day cohort output includes a partially observed cohort month."
         )
 
     if len(cohorts) < 12:
