@@ -1,5 +1,7 @@
 # Service Operations & Client Journey Analytics
 
+[![Quality checks](https://github.com/fernandoverdugo/service-operations-sql-analytics/actions/workflows/quality.yml/badge.svg)](https://github.com/fernandoverdugo/service-operations-sql-analytics/actions/workflows/quality.yml)
+
 A SQL-first portfolio project that simulates a multi-site public-service organization and analyzes how clients move from referral through intake, appointment, service delivery, and case closure.
 
 ## Project snapshot
@@ -141,6 +143,8 @@ stakeholder dashboard
 ```
 
 The project intentionally stops here rather than adding machine learning that is not needed for the business question.
+
+Automated GitHub Actions quality checks rebuild the synthetic data and database, regenerate analytical summaries and the dashboard, run validation scripts, execute the pytest suite, and verify repository integrity on pushes and pull requests to `main`.
 
 
 ## Reproduce the analysis
