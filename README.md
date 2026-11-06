@@ -1,6 +1,6 @@
 # Service Operations & Client Journey Analytics
 
-[![Quality checks](https://github.com/fernandoverdugo/service-operations-sql-analytics/actions/workflows/quality.yml/badge.svg)](https://github.com/fernandoverdugo/service-operations-sql-analytics/actions/workflows/quality.yml)
+[![Quality checks](https://github.com/fernandoverdugo/service-operations-sql-analytics/actions/workflows/quality-checks.yml/badge.svg)](https://github.com/fernandoverdugo/service-operations-sql-analytics/actions/workflows/quality-checks.yml)
 
 A SQL-first portfolio project that simulates a multi-site public-service organization and analyzes how clients move from referral through intake, appointment, service delivery, and case closure.
 
