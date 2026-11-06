@@ -2,9 +2,9 @@
 
 ## Purpose
 
-Milestone 3 converts the validated SQL analysis into a stakeholder-facing reporting layer.
+Milestone 3 converts the validated SQL analysis into a management-facing reporting layer.
 
-The goal is not to add more modeling. It is to demonstrate how an analyst moves from normalized operational tables to clean reporting marts and a concise dashboard.
+The goal is not to add more modeling. It is to translate normalized operational tables into clean reporting marts and a concise dashboard.
 
 ## Dashboard marts
 
@@ -121,6 +121,6 @@ The dashboard generator remains available in `src/build_dashboard.py`.
 
 **Complete**
 
-The project now demonstrates the full analyst workflow from relational data to SQL analysis to stakeholder-facing reporting.
+The project now connects the full workflow from relational data to SQL analysis to management-facing reporting.
 
-The final portfolio quality pass is complete. The repository now includes concise executive documentation, reproducibility instructions, project-integrity validation, licensing, and automated GitHub Actions checks that rebuild and validate the analytical workflow.
+The documentation and quality-control pass is complete. The repository includes concise executive documentation, reproducibility instructions, project-integrity validation, licensing, and automated GitHub Actions checks that rebuild and validate the analytical workflow.
