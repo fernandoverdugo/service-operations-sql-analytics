@@ -39,7 +39,11 @@ first_referrals AS (
     FROM ordered_referrals o
     CROSS JOIN observation obs
     WHERE o.referral_number = 1
-      AND o.referral_date <= obs.latest_eligible_first_referral
+      AND date(
+            substr(o.referral_date, 1, 7) || '-01',
+            '+1 month',
+            '-1 day'
+          ) <= obs.latest_eligible_first_referral
 )
 SELECT
     cohort_month,
