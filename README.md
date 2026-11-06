@@ -168,7 +168,7 @@ python -m pytest -q
 python src/validate_project.py
 ```
 
-Generated raw and processed data are intentionally excluded from version control. Aggregate analytical results used in the documentation are retained under `data/metadata/`.
+Generated raw and processed data are intentionally excluded from version control. The summary scripts refresh both the working outputs and the committed aggregate summaries under `data/metadata/`, which are the source used to build the stakeholder dashboard.
 
 ## Repository structure
 
