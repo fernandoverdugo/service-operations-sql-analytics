@@ -6,6 +6,18 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 PROCESSED = ROOT / "data" / "processed"
+METADATA = ROOT / "data" / "metadata"
+CONFIG = json.loads(
+    (ROOT / "config" / "simulation.json").read_text(encoding="utf-8")
+)
+
+
+def write_summary(result, filename):
+    payload = json.dumps(result, indent=2) + "\n"
+    PROCESSED.mkdir(parents=True, exist_ok=True)
+    METADATA.mkdir(parents=True, exist_ok=True)
+    (PROCESSED / filename).write_text(payload, encoding="utf-8")
+    (METADATA / filename).write_text(payload, encoding="utf-8")
 
 
 def main():
@@ -116,12 +128,16 @@ def main():
         "referral_channels": channels.to_dict(
             orient="records"
         ),
+        "provenance": {
+            "seed": int(CONFIG["seed"]),
+            "note": (
+                "Deterministic synthetic service-operations simulation; "
+                "aggregate outputs only."
+            ),
+        },
     }
 
-    (PROCESSED / "milestone1_summary.json").write_text(
-        json.dumps(result, indent=2) + "\n",
-        encoding="utf-8",
-    )
+    write_summary(result, "milestone1_summary.json")
     print(json.dumps(result, indent=2))
 
 
