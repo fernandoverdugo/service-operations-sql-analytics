@@ -81,8 +81,7 @@
     }
   ],
   "provenance": {
-    "workflow_run_id": 42247926182,
-    "head_sha": "60d6cc76dc0c7c04536759376f123ba143792d39",
-    "note": "Deterministic synthetic service-operations simulation using seed 699; aggregate outputs only."
+    "seed": 699,
+    "note": "Deterministic synthetic service-operations simulation; aggregate outputs only."
   }
 }
