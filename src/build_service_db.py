@@ -76,6 +76,22 @@ def main():
                 read_sql("sql/07_referral_channel_funnel.sql"),
                 connection,
             ),
+            "monthly_trends": pd.read_sql_query(
+                read_sql("sql/08_monthly_trends.sql"),
+                connection,
+            ),
+            "client_repeat_service": pd.read_sql_query(
+                read_sql("sql/09_client_repeat_service.sql"),
+                connection,
+            ),
+            "referral_cohorts": pd.read_sql_query(
+                read_sql("sql/10_referral_cohorts.sql"),
+                connection,
+            ),
+            "site_program_rankings": pd.read_sql_query(
+                read_sql("sql/11_site_program_rankings.sql"),
+                connection,
+            ),
         }
 
     for name, frame in outputs.items():
