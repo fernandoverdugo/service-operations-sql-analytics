@@ -25,4 +25,4 @@ This project treats KPI definitions as part of the analytical product rather tha
 - SLA rates clearly identify the population to which the SLA applies.
 - Cohort comparisons use only fully observed follow-up windows.
 - Site/program rankings should be interpreted alongside volume, wait time, and appointment performance rather than as standalone quality scores.
-- All values in this project are derived from deterministic synthetic data and are intended to demonstrate analytical workflow, not real program performance.
+- All values in this project are derived from deterministic synthetic data and are intended for methodological illustration, not as measures of real program performance.
