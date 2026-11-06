@@ -123,4 +123,4 @@ The dashboard generator remains available in `src/build_dashboard.py`.
 
 The project now demonstrates the full analyst workflow from relational data to SQL analysis to stakeholder-facing reporting.
 
-The next milestone is a final portfolio quality pass: executive summary, concise README presentation, reproducibility instructions, project integrity validation, and licensing.
+The final portfolio quality pass is complete. The repository now includes concise executive documentation, reproducibility instructions, project-integrity validation, licensing, and automated GitHub Actions checks that rebuild and validate the analytical workflow.
