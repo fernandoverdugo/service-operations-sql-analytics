@@ -42,7 +42,7 @@ All data are synthetic and generated deterministically with seed 699.
 
 Partner referrals show the strongest conversion through service, while Hotline referrals have the lowest intake and service conversion.
 
-Because the data are synthetic, these differences demonstrate analytical workflow rather than real-world program performance.
+Because the data are synthetic, these differences illustrate the analytical workflow rather than real-world program performance.
 
 ## Site/program observations
 
@@ -56,7 +56,7 @@ The highest observed no-show rate occurs for **South / Employment — Intake Fol
 
 ## Analyst value
 
-Milestone 1 demonstrates:
+Milestone 1 includes:
 
 1. relational schema design;
 2. multi-table SQL joins;
