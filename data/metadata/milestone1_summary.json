@@ -1,0 +1,88 @@
+{
+  "executive_scorecard": {
+    "clients": 3000,
+    "referrals": 3968,
+    "intakes": 3384,
+    "referrals_served": 2652,
+    "referral_to_intake_rate": 0.8528,
+    "referral_to_service_rate": 0.6683,
+    "avg_days_referral_to_intake": 3.91,
+    "avg_days_referral_to_service": 12.03,
+    "intake_sla_rate_among_intakes": 0.6998,
+    "service_sla_rate_among_served": 0.7504,
+    "appointments": 6783,
+    "no_show_rate": 0.1656,
+    "cancellation_rate": 0.0882,
+    "goals_met_closure_rate": 0.581
+  },
+  "best_referral_to_service_group": {
+    "site": "Central",
+    "program": "Benefits",
+    "referred": 256,
+    "referral_to_service_rate": 0.7148,
+    "avg_days_referral_to_service": 11.49
+  },
+  "lowest_referral_to_service_group": {
+    "site": "West",
+    "program": "Housing Support",
+    "referred": 262,
+    "referral_to_service_rate": 0.5916,
+    "avg_days_referral_to_service": 12.2
+  },
+  "best_service_sla_group": {
+    "site": "North",
+    "program": "Employment",
+    "referrals": 227,
+    "service_sla_rate": 0.8182
+  },
+  "highest_no_show_group": {
+    "site": "South",
+    "program": "Employment",
+    "appointment_type": "Intake Follow-Up",
+    "appointments": 196,
+    "no_show_rate": 0.2041
+  },
+  "referral_channels": [
+    {
+      "referral_channel": "Partner Referral",
+      "referrals": 1633,
+      "intakes": 1473,
+      "referrals_served": 1160,
+      "referral_to_intake_rate": 0.902,
+      "referral_to_service_rate": 0.7103,
+      "avg_days_referral_to_service": 12.21
+    },
+    {
+      "referral_channel": "Self Referral",
+      "referrals": 1146,
+      "intakes": 925,
+      "referrals_served": 748,
+      "referral_to_intake_rate": 0.8072,
+      "referral_to_service_rate": 0.6527,
+      "avg_days_referral_to_service": 11.75
+    },
+    {
+      "referral_channel": "Walk-In",
+      "referrals": 494,
+      "intakes": 433,
+      "referrals_served": 318,
+      "referral_to_intake_rate": 0.8765,
+      "referral_to_service_rate": 0.6437,
+      "avg_days_referral_to_service": 11.43
+    },
+    {
+      "referral_channel": "Hotline",
+      "referrals": 695,
+      "intakes": 553,
+      "referrals_served": 426,
+      "referral_to_intake_rate": 0.7957,
+      "referral_to_service_rate": 0.6129,
+      "avg_days_referral_to_service": 12.46
+    }
+  ],
+  "provenance": {
+    "workflow_run_id": 42247926182,
+    "head_sha": "60d6cc76dc0c7c04536759376f123ba143792d39",
+    "note": "Deterministic synthetic service-operations simulation using seed 699; aggregate outputs only."
+  }
+}
