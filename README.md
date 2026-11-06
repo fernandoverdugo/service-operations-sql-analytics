@@ -55,6 +55,30 @@ Key operational results:
 
 [Read the Milestone 1 findings](docs/MILESTONE1_OPERATIONAL_SCORECARD.md)
 
+## Milestone 2 — trends, cohorts, and ranked performance
+
+**Complete**
+
+The SQL layer now includes:
+
+- 18 monthly referral trend periods
+- 3-month rolling service-conversion rates
+- month-over-month change with `LAG()`
+- client-level repeat-referral and repeat-service behavior
+- fully observed 90-day referral cohorts
+- `ROW_NUMBER()`, `LEAD()`, and `DENSE_RANK()`
+- ranked site/program performance
+
+Selected results:
+
+- repeat-referral clients: **27.0%**
+- multi-program clients: **20.9%**
+- repeat-service clients: **38.6%**
+- highest fully observed 90-day repeat cohort: **13.3%**
+- lowest fully observed 90-day repeat cohort: **5.2%**
+
+[Read the Milestone 2 findings](docs/MILESTONE2_TRENDS_COHORTS.md)
+
 ## Next milestone
 
-Milestone 2 will add monthly trends, cohort analysis, repeat-service behavior, and window-function-based site/program rankings.
+Milestone 3 will convert the validated SQL outputs into dashboard-ready analytical marts and a stakeholder-facing visualization layer.
