@@ -92,6 +92,18 @@ def main():
                 read_sql("sql/11_site_program_rankings.sql"),
                 connection,
             ),
+            "dashboard_executive": pd.read_sql_query(
+                read_sql("sql/12_executive_dashboard_mart.sql"),
+                connection,
+            ),
+            "dashboard_monthly": pd.read_sql_query(
+                read_sql("sql/13_monthly_dashboard_mart.sql"),
+                connection,
+            ),
+            "dashboard_site_program": pd.read_sql_query(
+                read_sql("sql/14_site_program_dashboard_mart.sql"),
+                connection,
+            ),
         }
 
     for name, frame in outputs.items():
