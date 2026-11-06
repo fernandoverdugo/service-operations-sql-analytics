@@ -2,7 +2,7 @@
 
 [![Quality checks](https://github.com/fernandoverdugo/service-operations-sql-analytics/actions/workflows/quality-checks.yml/badge.svg)](https://github.com/fernandoverdugo/service-operations-sql-analytics/actions/workflows/quality-checks.yml)
 
-A SQL-first portfolio project that simulates a multi-site public-service organization and analyzes how clients move from referral through intake, appointment, service delivery, and case closure.
+A SQL-first operational analysis of a simulated multi-site public-service organization, following clients from referral through intake, appointment, service delivery, and case closure.
 
 ## Project snapshot
 
@@ -27,9 +27,9 @@ A SQL-first portfolio project that simulates a multi-site public-service organiz
 
 Where do clients experience delays or drop-off in the service journey, and which operational patterns should managers address first?
 
-## What a hiring manager can see quickly
+## Analytical workflow
 
-This repository demonstrates the core workflow expected in many Data Analyst roles:
+The project follows a SQL-first operational analytics workflow:
 
 - query normalized relational data with SQL;
 - define and document business KPIs;
@@ -41,9 +41,9 @@ This repository demonstrates the core workflow expected in many Data Analyst rol
 
 [View the live dashboard](https://fernandoverdugo.github.io/service-operations-sql-analytics/dashboard.html) · [Read the KPI dictionary](docs/KPI_DICTIONARY.md)
 
-## Why this project
+## Analytical scope
 
-This project is intentionally designed around the work expected of a Data Analyst:
+The analysis centers on relational data modeling and operational performance:
 
 - relational data modeling
 - SQL joins
@@ -58,7 +58,7 @@ This project is intentionally designed around the work expected of a Data Analys
 - dashboard-ready marts
 - executive reporting
 
-Machine learning is not the centerpiece. The goal is to demonstrate strong operational analytics and stakeholder-facing SQL work.
+Machine learning is deliberately outside the core scope; the emphasis is on operational analytics, transparent SQL logic, and reporting outputs that can support management decisions.
 
 ## Synthetic scenario
 
@@ -136,7 +136,7 @@ The repository also includes a lightweight stakeholder dashboard generated from 
 
 ## Current status
 
-**Portfolio-ready**
+**Analysis complete**
 
 The completed analyst workflow is:
 
