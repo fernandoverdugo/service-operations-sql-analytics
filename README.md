@@ -2,6 +2,25 @@
 
 A SQL-first portfolio project that simulates a multi-site public-service organization and analyzes how clients move from referral through intake, appointment, service delivery, and case closure.
 
+## Project snapshot
+
+- **3,000** synthetic clients
+- **3,968** referrals
+- **6,783** appointments
+- **4,127** service events
+- **85.3%** referral-to-intake conversion
+- **66.8%** referral-to-service conversion
+- **12.03 days** average referral-to-service time
+- **16.6%** appointment no-show rate
+- **18 months** of operational trends
+- **15 fully observed** 90-day referral cohorts
+
+[Read the executive summary](docs/EXECUTIVE_SUMMARY.md)
+
+## Technical stack
+
+**SQL · SQLite · Python · pandas · NumPy · pytest · GitHub Actions · HTML/CSS**
+
 ## Core question
 
 Where do clients experience delays or drop-off in the service journey, and which operational patterns should managers address first?
@@ -99,7 +118,9 @@ The repository also includes a lightweight stakeholder dashboard generated from 
 
 ## Current status
 
-The core analyst workflow is complete:
+**Portfolio-ready**
+
+The completed analyst workflow is:
 
 ```text
 synthetic relational data
@@ -117,4 +138,56 @@ dashboard-ready marts
 stakeholder dashboard
 ```
 
-The remaining work is portfolio presentation and repository hardening: executive summary, reproducibility instructions, integrity validation, and licensing.
+The project intentionally stops here rather than adding machine learning that is not needed for the business question.
+
+
+## Reproduce the analysis
+
+Requires Python 3.14.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+
+python src/generate_synthetic_data.py
+python src/build_service_db.py
+python src/summarize_milestone1.py
+python src/summarize_milestone2.py
+python src/validate_dashboard.py
+python src/validate_dataset.py
+
+python -m pytest -q
+python src/validate_project.py
+```
+
+Generated raw and processed data are intentionally excluded from version control. Aggregate analytical results used in the documentation are retained under `data/metadata/`.
+
+## Repository structure
+
+```text
+config/          synthetic data configuration
+data/metadata/   committed aggregate analytical results
+docs/            executive summary, milestone reports, dashboard, and figures
+sql/             schema, KPI, funnel, cohort, ranking, and dashboard-mart queries
+src/             data generation, database build, summaries, dashboard, validation
+tests/           smoke and project-quality tests
+.github/         automated quality workflow
+```
+
+## Documentation
+
+- [Executive Summary](docs/EXECUTIVE_SUMMARY.md)
+- [Research Design](docs/RESEARCH_DESIGN.md)
+- [Milestone 1 — Operational Scorecard & Funnel](docs/MILESTONE1_OPERATIONAL_SCORECARD.md)
+- [Milestone 2 — Trends, Cohorts & Ranked Performance](docs/MILESTONE2_TRENDS_COHORTS.md)
+- [Milestone 3 — Dashboard Marts & Stakeholder Reporting](docs/MILESTONE3_DASHBOARD.md)
+- [Dashboard HTML](docs/dashboard.html)
+
+## Responsible use
+
+All data are synthetic. The project evaluates operational performance and service-delivery patterns; it does not model client eligibility, protected-class risk, or automated case decisions.
+
+## License
+
+This project is released under the [MIT License](LICENSE).
