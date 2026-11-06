@@ -104,4 +104,4 @@ Milestone 2 adds clear examples of:
 
 **Complete**
 
-The next milestone will build dashboard-ready analytical marts and a stakeholder-facing visualization layer from these validated SQL outputs.
+Milestone 2 feeds the completed dashboard marts and stakeholder-facing reporting layer documented in Milestone 3.
