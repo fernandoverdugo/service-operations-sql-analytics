@@ -27,6 +27,20 @@ A SQL-first portfolio project that simulates a multi-site public-service organiz
 
 Where do clients experience delays or drop-off in the service journey, and which operational patterns should managers address first?
 
+## What a hiring manager can see quickly
+
+This repository demonstrates the core workflow expected in many Data Analyst roles:
+
+- query normalized relational data with SQL;
+- define and document business KPIs;
+- analyze conversion funnels, SLAs, no-shows, cohorts, and trends;
+- use window functions for rolling metrics and rankings;
+- create reporting marts that separate business logic from presentation;
+- translate analysis into management-facing follow-up priorities;
+- deliver a validated dashboard and reproducible reporting pipeline.
+
+[View the live dashboard](https://fernandoverdugo.github.io/service-operations-sql-analytics/dashboard.html) · [Read the KPI dictionary](docs/KPI_DICTIONARY.md)
+
 ## Why this project
 
 This project is intentionally designed around the work expected of a Data Analyst:
@@ -186,6 +200,7 @@ tests/           smoke and project-quality tests
 
 - [Executive Summary](docs/EXECUTIVE_SUMMARY.md)
 - [Research Design](docs/RESEARCH_DESIGN.md)
+- [KPI Dictionary](docs/KPI_DICTIONARY.md)
 - [Milestone 1 — Operational Scorecard & Funnel](docs/MILESTONE1_OPERATIONAL_SCORECARD.md)
 - [Milestone 2 — Trends, Cohorts & Ranked Performance](docs/MILESTONE2_TRENDS_COHORTS.md)
 - [Milestone 3 — Dashboard Marts & Stakeholder Reporting](docs/MILESTONE3_DASHBOARD.md)
