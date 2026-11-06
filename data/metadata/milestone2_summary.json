@@ -1,0 +1,92 @@
+{
+  "monthly_periods": 18,
+  "latest_month": {
+    "referral_month": "2026-06",
+    "referrals": 217,
+    "referral_to_intake_rate": 0.8387,
+    "referral_to_service_rate": 0.6774,
+    "referral_to_service_rate_3m": 0.6665,
+    "avg_days_referral_to_service": 12.34
+  },
+  "repeat_behavior": {
+    "clients": 3000,
+    "repeat_referral_clients": 811,
+    "repeat_referral_rate": 0.2703333333333333,
+    "multi_program_clients": 628,
+    "multi_program_rate": 0.20933333333333334,
+    "repeat_service_clients": 1157,
+    "repeat_service_rate": 0.38566666666666666
+  },
+  "cohorts": {
+    "cohort_months": 15,
+    "highest_repeat_90_day_cohort": {
+      "cohort_month": "2025-03",
+      "clients": 203,
+      "repeat_within_90_days": 27,
+      "repeat_within_90_days_rate": 0.133
+    },
+    "lowest_repeat_90_day_cohort": {
+      "cohort_month": "2025-10",
+      "clients": 155,
+      "repeat_within_90_days": 8,
+      "repeat_within_90_days_rate": 0.0516
+    }
+  },
+  "top_overall_service_rate": [
+    {
+      "site": "Central",
+      "program": "Benefits",
+      "service_rate": 0.7148,
+      "avg_days_to_service": 11.49,
+      "no_show_rate": 0.165,
+      "overall_service_rate_rank": 1
+    },
+    {
+      "site": "North",
+      "program": "Benefits",
+      "service_rate": 0.7137,
+      "avg_days_to_service": 11.52,
+      "no_show_rate": 0.152,
+      "overall_service_rate_rank": 2
+    },
+    {
+      "site": "West",
+      "program": "Benefits",
+      "service_rate": 0.7103,
+      "avg_days_to_service": 12.07,
+      "no_show_rate": 0.1882,
+      "overall_service_rate_rank": 3
+    }
+  ],
+  "bottom_overall_service_rate": [
+    {
+      "site": "West",
+      "program": "Housing Support",
+      "service_rate": 0.5916,
+      "avg_days_to_service": 12.2,
+      "no_show_rate": 0.1667,
+      "overall_service_rate_rank": 16
+    },
+    {
+      "site": "Central",
+      "program": "Housing Support",
+      "service_rate": 0.5992,
+      "avg_days_to_service": 12.53,
+      "no_show_rate": 0.1748,
+      "overall_service_rate_rank": 15
+    },
+    {
+      "site": "Central",
+      "program": "Employment",
+      "service_rate": 0.6203,
+      "avg_days_to_service": 12.59,
+      "no_show_rate": 0.1742,
+      "overall_service_rate_rank": 14
+    }
+  ],
+  "provenance": {
+    "workflow_run_id": 42248529919,
+    "head_sha": "f2bf8c3aa87f88f4aabbb194f08805dcbb524ea7",
+    "note": "Deterministic synthetic service-operations analysis using seed 699. Ninety-day cohort comparisons include only fully observed cohort months."
+  }
+}
