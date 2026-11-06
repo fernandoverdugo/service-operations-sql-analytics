@@ -120,6 +120,18 @@ def validate_metadata():
     if milestone2["cohorts"]["cohort_months"] != 15:
         raise RuntimeError("Unexpected eligible cohort count.")
 
+    if len(milestone2["top_overall_service_rate"]) != 3:
+        raise RuntimeError("Expected three top-ranked site/program groups.")
+
+    if len(milestone2["bottom_overall_service_rate"]) != 3:
+        raise RuntimeError("Expected three bottom-ranked site/program groups.")
+
+    if milestone1["provenance"]["seed"] != 699:
+        raise RuntimeError("Unexpected Milestone 1 simulation seed.")
+
+    if milestone2["provenance"]["seed"] != 699:
+        raise RuntimeError("Unexpected Milestone 2 simulation seed.")
+
 
 def main():
     validate_required_artifacts()
