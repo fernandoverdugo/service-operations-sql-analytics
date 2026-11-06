@@ -68,6 +68,14 @@ def main():
                 read_sql("sql/05_sla_performance.sql"),
                 connection,
             ),
+            "executive_scorecard": pd.read_sql_query(
+                read_sql("sql/06_executive_scorecard.sql"),
+                connection,
+            ),
+            "referral_channel_funnel": pd.read_sql_query(
+                read_sql("sql/07_referral_channel_funnel.sql"),
+                connection,
+            ),
         }
 
     for name, frame in outputs.items():
