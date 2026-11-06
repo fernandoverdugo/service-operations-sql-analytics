@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+<title id="title">Service Operations Dashboard preview</title>
+<desc id="desc">Dashboard preview showing referral volume, conversion rates, service wait time, funnel performance, referral channel conversion, and repeat-service metrics.</desc>
+<rect width="1200" height="700" fill="#f6f7f9"/>
+<text x="55" y="55" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#17202a">Service Operations &amp; Client Journey</text>
+<text x="55" y="82" font-family="Arial,sans-serif" font-size="15" fill="#667085">Synthetic operational dashboard • SQL-first analytical workflow</text>
+<g font-family="Arial,sans-serif">
+<g><rect x="55" y="115" width="250" height="105" rx="14" fill="#fff" stroke="#e4e7ec"/><text x="75" y="145" font-size="13" fill="#667085">REFERRALS</text><text x="75" y="190" font-size="32" font-weight="700" fill="#17202a">3,968</text></g>
+<g><rect x="325" y="115" width="250" height="105" rx="14" fill="#fff" stroke="#e4e7ec"/><text x="345" y="145" font-size="13" fill="#667085">REFERRAL → INTAKE</text><text x="345" y="190" font-size="32" font-weight="700" fill="#17202a">85.3%</text></g>
+<g><rect x="595" y="115" width="250" height="105" rx="14" fill="#fff" stroke="#e4e7ec"/><text x="615" y="145" font-size="13" fill="#667085">REFERRAL → SERVICE</text><text x="615" y="190" font-size="32" font-weight="700" fill="#17202a">66.8%</text></g>
+<g><rect x="865" y="115" width="280" height="105" rx="14" fill="#fff" stroke="#e4e7ec"/><text x="885" y="145" font-size="13" fill="#667085">AVG. DAYS TO SERVICE</text><text x="885" y="190" font-size="32" font-weight="700" fill="#17202a">12.03</text></g>
+<rect x="55" y="245" width="540" height="390" rx="14" fill="#fff" stroke="#e4e7ec"/>
+<text x="80" y="285" font-size="20" font-weight="700" fill="#17202a">Referral funnel</text>
+<text x="80" y="330" font-size="15" fill="#17202a">Referred</text><text x="520" y="330" font-size="15" font-weight="700" text-anchor="end" fill="#17202a">3,968</text>
+<rect x="80" y="345" width="440" height="14" rx="7" fill="#edf0f5"/><rect x="80" y="345" width="440" height="14" rx="7" fill="#2457d6"/>
+<text x="80" y="400" font-size="15" fill="#17202a">Completed intake</text><text x="520" y="400" font-size="15" font-weight="700" text-anchor="end" fill="#17202a">3,384 · 85.3%</text>
+<rect x="80" y="415" width="440" height="14" rx="7" fill="#edf0f5"/><rect x="80" y="415" width="375" height="14" rx="7" fill="#3b6ee5"/>
+<text x="80" y="470" font-size="15" fill="#17202a">Received service</text><text x="520" y="470" font-size="15" font-weight="700" text-anchor="end" fill="#17202a">2,652 · 66.8%</text>
+<rect x="80" y="485" width="440" height="14" rx="7" fill="#edf0f5"/><rect x="80" y="485" width="294" height="14" rx="7" fill="#5b8def"/>
+<text x="80" y="560" font-size="14" fill="#667085">Partner Referral service conversion</text><text x="520" y="560" font-size="22" font-weight="700" text-anchor="end" fill="#17202a">71.0%</text>
+<text x="80" y="600" font-size="14" fill="#667085">Hotline service conversion</text><text x="520" y="600" font-size="22" font-weight="700" text-anchor="end" fill="#17202a">61.3%</text>
+<rect x="620" y="245" width="525" height="390" rx="14" fill="#fff" stroke="#e4e7ec"/>
+<text x="645" y="285" font-size="20" font-weight="700" fill="#17202a">Operational snapshot</text>
+<text x="645" y="335" font-size="14" fill="#667085">SERVICE SLA AMONG SERVED</text><text x="1070" y="335" font-size="24" font-weight="700" text-anchor="end" fill="#17202a">75.0%</text>
+<text x="645" y="390" font-size="14" fill="#667085">NO-SHOW RATE</text><text x="1070" y="390" font-size="24" font-weight="700" text-anchor="end" fill="#17202a">16.6%</text>
+<text x="645" y="445" font-size="14" fill="#667085">REPEAT REFERRALS</text><text x="1070" y="445" font-size="24" font-weight="700" text-anchor="end" fill="#17202a">27.0%</text>
+<text x="645" y="500" font-size="14" fill="#667085">REPEAT SERVICE</text><text x="1070" y="500" font-size="24" font-weight="700" text-anchor="end" fill="#17202a">38.6%</text>
+<text x="645" y="555" font-size="14" fill="#667085">TOP SITE / PROGRAM</text><text x="1070" y="555" font-size="18" font-weight="700" text-anchor="end" fill="#17202a">Central / Benefits</text>
+<text x="645" y="600" font-size="14" fill="#667085">SERVICE CONVERSION</text><text x="1070" y="600" font-size="24" font-weight="700" text-anchor="end" fill="#17202a">71.5%</text>
+</g>
+</svg>
