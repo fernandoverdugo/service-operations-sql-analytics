@@ -6,6 +6,38 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 PROCESSED = ROOT / "data" / "processed"
+METADATA = ROOT / "data" / "metadata"
+CONFIG = json.loads(
+    (ROOT / "config" / "simulation.json").read_text(encoding="utf-8")
+)
+
+
+def write_summary(result, filename):
+    payload = json.dumps(result, indent=2) + "\n"
+    PROCESSED.mkdir(parents=True, exist_ok=True)
+    METADATA.mkdir(parents=True, exist_ok=True)
+    (PROCESSED / filename).write_text(payload, encoding="utf-8")
+    (METADATA / filename).write_text(payload, encoding="utf-8")
+
+
+def ranking_rows(rankings, ascending):
+    return (
+        rankings.sort_values(
+            "overall_service_rate_rank",
+            ascending=ascending,
+        )
+        .head(3)[
+            [
+                "site",
+                "program",
+                "service_rate",
+                "avg_days_to_service",
+                "no_show_rate",
+                "overall_service_rate_rank",
+            ]
+        ]
+        .to_dict(orient="records")
+    )
 
 
 def main():
@@ -74,47 +106,25 @@ def main():
                 .to_dict(orient="records")[0]
             ),
         },
-        "rankings": {
-            "top_overall_service_rate": (
-                rankings.sort_values(
-                    "overall_service_rate_rank"
-                )
-                .head(5)[
-                    [
-                        "site",
-                        "program",
-                        "service_rate",
-                        "avg_days_to_service",
-                        "no_show_rate",
-                        "overall_service_rate_rank",
-                    ]
-                ]
-                .to_dict(orient="records")
-            ),
-            "bottom_overall_service_rate": (
-                rankings.sort_values(
-                    "overall_service_rate_rank",
-                    ascending=False,
-                )
-                .head(5)[
-                    [
-                        "site",
-                        "program",
-                        "service_rate",
-                        "avg_days_to_service",
-                        "no_show_rate",
-                        "overall_service_rate_rank",
-                    ]
-                ]
-                .to_dict(orient="records")
+        "top_overall_service_rate": ranking_rows(
+            rankings,
+            ascending=True,
+        ),
+        "bottom_overall_service_rate": ranking_rows(
+            rankings,
+            ascending=False,
+        ),
+        "provenance": {
+            "seed": int(CONFIG["seed"]),
+            "note": (
+                "Deterministic synthetic service-operations analysis. "
+                "Ninety-day cohort comparisons include only fully "
+                "observed cohort months."
             ),
         },
     }
 
-    (PROCESSED / "milestone2_summary.json").write_text(
-        json.dumps(result, indent=2) + "\n",
-        encoding="utf-8",
-    )
+    write_summary(result, "milestone2_summary.json")
     print(json.dumps(result, indent=2))
 
 
