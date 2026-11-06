@@ -48,7 +48,7 @@ def validate_markdown_links():
 
 def validate_required_artifacts():
     required = [
-        ".github/workflows/quality.yml",
+        ".github/workflows/quality-checks.yml",
         "config/simulation.json",
         "data/metadata/milestone1_summary.json",
         "data/metadata/milestone2_summary.json",
