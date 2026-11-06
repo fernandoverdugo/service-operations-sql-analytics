@@ -48,6 +48,15 @@ def main():
             encoding="utf-8"
         )
     )
+    dashboard_executive = pd.read_csv(
+        PROCESSED / "dashboard_executive.csv"
+    )
+    dashboard_monthly = pd.read_csv(
+        PROCESSED / "dashboard_monthly.csv"
+    )
+    dashboard_site_program = pd.read_csv(
+        PROCESSED / "dashboard_site_program.csv"
+    )
 
     assert_unique(clients, ["client_id"], "clients")
     assert_unique(referrals, ["referral_id"], "referrals")
@@ -150,6 +159,31 @@ def main():
 
     if milestone2["monthly_periods"] != len(trends):
         raise RuntimeError("Milestone 2 monthly-period count mismatch.")
+
+    if len(dashboard_executive) != 1:
+        raise RuntimeError(
+            "Executive dashboard mart should contain one row."
+        )
+
+    if len(dashboard_monthly) != len(trends):
+        raise RuntimeError(
+            "Monthly dashboard mart should match monthly trend periods."
+        )
+
+    if len(dashboard_site_program) != expected_groups:
+        raise RuntimeError(
+            "Site/program dashboard mart group count mismatch."
+        )
+
+    if not dashboard_site_program["service_rate"].between(0, 1).all():
+        raise RuntimeError(
+            "Invalid service rate in dashboard site/program mart."
+        )
+
+    if not dashboard_site_program["no_show_rate"].between(0, 1).all():
+        raise RuntimeError(
+            "Invalid no-show rate in dashboard site/program mart."
+        )
 
     print("Service operations validation passed.")
 
