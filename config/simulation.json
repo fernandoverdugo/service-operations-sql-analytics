@@ -1,0 +1,11 @@
+{
+  "seed": 699,
+  "clients": 3000,
+  "start_date": "2025-01-01",
+  "months": 18,
+  "sites": ["North", "Central", "South", "West"],
+  "programs": ["Employment", "Benefits", "Health Navigation", "Housing Support"],
+  "channels": ["Partner Referral", "Self Referral", "Hotline", "Walk-In"],
+  "sla_days_to_intake": 5,
+  "sla_days_to_first_service": 14
+}
