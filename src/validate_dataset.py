@@ -39,6 +39,15 @@ def main():
             encoding="utf-8"
         )
     )
+    trends = pd.read_csv(PROCESSED / "monthly_trends.csv")
+    repeat = pd.read_csv(PROCESSED / "client_repeat_service.csv")
+    cohorts = pd.read_csv(PROCESSED / "referral_cohorts.csv")
+    rankings = pd.read_csv(PROCESSED / "site_program_rankings.csv")
+    milestone2 = json.loads(
+        (PROCESSED / "milestone2_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
 
     assert_unique(clients, ["client_id"], "clients")
     assert_unique(referrals, ["referral_id"], "referrals")
@@ -106,7 +115,27 @@ def main():
     if not sla["service_sla_rate"].between(0, 1).all():
         raise RuntimeError("Invalid service SLA rate.")
 
-    print("Milestone 1 service operations validation passed.")
+    if len(trends) != 18:
+        raise RuntimeError("Expected 18 monthly referral cohorts.")
+
+    if len(repeat) != len(clients):
+        raise RuntimeError(
+            "Repeat-service table should contain one row per client."
+        )
+
+    if not repeat["repeat_referral_flag"].isin([0, 1]).all():
+        raise RuntimeError("Invalid repeat-referral flag.")
+
+    if len(cohorts) != 18:
+        raise RuntimeError("Expected 18 first-referral cohort months.")
+
+    if len(rankings) != expected_groups:
+        raise RuntimeError("Site/program ranking group count mismatch.")
+
+    if milestone2["monthly_periods"] != len(trends):
+        raise RuntimeError("Milestone 2 monthly-period count mismatch.")
+
+    print("Service operations validation passed.")
 
 
 if __name__ == "__main__":
