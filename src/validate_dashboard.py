@@ -50,6 +50,8 @@ def main():
         pct(repeat["repeat_service_rate"]),
         str(latest["referral_month"]),
         pct(latest["referral_to_service_rate"]),
+        "Management actions",
+        "KPI dictionary",
     ]
 
     missing = [value for value in expected if value not in html]
