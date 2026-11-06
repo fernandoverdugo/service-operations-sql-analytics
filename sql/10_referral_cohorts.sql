@@ -1,4 +1,10 @@
-WITH ordered_referrals AS (
+WITH observation AS (
+    SELECT
+        MAX(referral_date) AS observation_end,
+        date(MAX(referral_date), '-90 days') AS latest_eligible_first_referral
+    FROM referrals
+),
+ordered_referrals AS (
     SELECT
         r.client_id,
         r.referral_id,
@@ -17,21 +23,23 @@ WITH ordered_referrals AS (
 ),
 first_referrals AS (
     SELECT
-        client_id,
-        referral_id,
-        referral_date,
-        substr(referral_date, 1, 7) AS cohort_month,
-        program,
-        site,
-        next_referral_date,
+        o.client_id,
+        o.referral_id,
+        o.referral_date,
+        substr(o.referral_date, 1, 7) AS cohort_month,
+        o.program,
+        o.site,
+        o.next_referral_date,
         CASE
-            WHEN next_referral_date IS NOT NULL
-             AND julianday(next_referral_date)
-                 - julianday(referral_date) <= 90
+            WHEN o.next_referral_date IS NOT NULL
+             AND julianday(o.next_referral_date)
+                 - julianday(o.referral_date) <= 90
             THEN 1 ELSE 0
         END AS repeat_within_90_days
-    FROM ordered_referrals
-    WHERE referral_number = 1
+    FROM ordered_referrals o
+    CROSS JOIN observation obs
+    WHERE o.referral_number = 1
+      AND o.referral_date <= obs.latest_eligible_first_referral
 )
 SELECT
     cohort_month,
