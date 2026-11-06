@@ -5,68 +5,243 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Service Operations Dashboard</title>
 <style>
-:root{--bg:#f6f7f9;--card:#fff;--text:#17202a;--muted:#667085;--line:#e4e7ec;--accent:#2457d6;--accent2:#5b8def}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
-main{max-width:1180px;margin:0 auto;padding:40px 24px 64px}h1{margin:0;font-size:34px}.subtitle{color:var(--muted);margin:8px 0 28px}
-.grid{display:grid;gap:16px}.kpis{grid-template-columns:repeat(4,1fr)}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
-.kpi-label{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.04em}.kpi-value{font-size:30px;font-weight:700;margin-top:6px}
-.section{margin-top:22px}.two{grid-template-columns:1.1fr .9fr}h2{margin:0 0 16px;font-size:20px}.funnel-row{margin:16px 0}.funnel-head{display:flex;justify-content:space-between;margin-bottom:7px}
-.bar{height:12px;background:#edf0f5;border-radius:999px;overflow:hidden}.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
-table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:11px 9px;border-bottom:1px solid var(--line);text-align:left}th{color:var(--muted);font-weight:600}
-.note{color:var(--muted);font-size:13px;line-height:1.5}.metric-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}.metric{padding:14px;border:1px solid var(--line);border-radius:10px}.metric strong{display:block;font-size:23px;margin-top:4px}
-@media(max-width:850px){.kpis,.two{grid-template-columns:1fr 1fr}}@media(max-width:580px){.kpis,.two,.metric-list{grid-template-columns:1fr}main{padding:28px 16px 48px}}
+:root {
+  --bg:#f6f7f9;
+  --card:#ffffff;
+  --text:#17202a;
+  --muted:#667085;
+  --line:#e4e7ec;
+  --accent:#2457d6;
+  --accent2:#5b8def;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+main { max-width:1180px; margin:0 auto; padding:40px 24px 64px; }
+h1 { margin:0; font-size:34px; }
+.subtitle { color:var(--muted); margin:8px 0 28px; }
+.grid { display:grid; gap:16px; }
+.kpis { grid-template-columns:repeat(4,1fr); }
+.card {
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:20px;
+  box-shadow:0 1px 2px rgba(16,24,40,.04);
+}
+.kpi-label { color:var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:.04em; }
+.kpi-value { font-size:30px; font-weight:700; margin-top:6px; }
+.section { margin-top:22px; }
+.two { grid-template-columns:1.1fr .9fr; }
+h2 { margin:0 0 16px; font-size:20px; }
+.funnel-row { margin:16px 0; }
+.funnel-head { display:flex; justify-content:space-between; margin-bottom:7px; }
+.bar { height:12px; background:#edf0f5; border-radius:999px; overflow:hidden; }
+.bar span { display:block; height:100%; background:linear-gradient(90deg,var(--accent),var(--accent2)); }
+table { width:100%; border-collapse:collapse; font-size:14px; }
+th, td { padding:11px 9px; border-bottom:1px solid var(--line); text-align:left; }
+th { color:var(--muted); font-weight:600; }
+.note { color:var(--muted); font-size:13px; line-height:1.5; }
+.metric-list { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.metric {
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:10px;
+}
+.metric strong { display:block; font-size:23px; margin-top:4px; }
+@media (max-width:850px) {
+  .kpis, .two { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:580px) {
+  .kpis, .two, .metric-list { grid-template-columns:1fr; }
+  main { padding:28px 16px 48px; }
+}
 </style>
 </head>
-<body><main>
-<h1>Service Operations & Client Journey</h1>
-<p class="subtitle">Synthetic operational dashboard • 18-month referral window • SQL-first analytical workflow</p>
-<div class="grid kpis">
-<div class="card"><div class="kpi-label">Referrals</div><div class="kpi-value">3,968</div></div>
-<div class="card"><div class="kpi-label">Referral → Intake</div><div class="kpi-value">85.3%</div></div>
-<div class="card"><div class="kpi-label">Referral → Service</div><div class="kpi-value">66.8%</div></div>
-<div class="card"><div class="kpi-label">Avg. Days to Service</div><div class="kpi-value">12.03</div></div>
-</div>
-<div class="grid two section">
-<section class="card"><h2>Referral funnel</h2>
-<div class="funnel-row"><div class="funnel-head"><span>Referred</span><strong>3,968</strong></div><div class="bar"><span style="width:100%"></span></div></div>
-<div class="funnel-row"><div class="funnel-head"><span>Completed intake</span><strong>3,384 · 85.3%</strong></div><div class="bar"><span style="width:85.3%"></span></div></div>
-<div class="funnel-row"><div class="funnel-head"><span>Received service</span><strong>2,652 · 66.8%</strong></div><div class="bar"><span style="width:66.8%"></span></div></div>
-<p class="note">Conversion is calculated from referral records, not from completed cases only.</p></section>
-<section class="card"><h2>Operational quality</h2><div class="metric-list">
-<div class="metric"><span class="note">Service SLA among served</span><strong>75.0%</strong></div>
-<div class="metric"><span class="note">No-show rate</span><strong>16.6%</strong></div>
-<div class="metric"><span class="note">Cancellation rate</span><strong>8.8%</strong></div>
-<div class="metric"><span class="note">Goals-met closure</span><strong>58.1%</strong></div>
-</div></section></div>
-<section class="card section"><h2>Referral channel performance</h2>
-<table><thead><tr><th>Channel</th><th>Referrals</th><th>Intake rate</th><th>Service rate</th><th>Avg. days to service</th></tr></thead><tbody>
-<tr><td>Partner Referral</td><td>1,633</td><td>90.2%</td><td>71.0%</td><td>12.21</td></tr>
-<tr><td>Self Referral</td><td>1,146</td><td>80.7%</td><td>65.3%</td><td>11.75</td></tr>
-<tr><td>Walk-In</td><td>494</td><td>87.7%</td><td>64.4%</td><td>11.43</td></tr>
-<tr><td>Hotline</td><td>695</td><td>79.6%</td><td>61.3%</td><td>12.46</td></tr>
-</tbody></table></section>
-<div class="grid two section">
-<section class="card"><h2>Repeat-service behavior</h2><div class="metric-list">
-<div class="metric"><span class="note">Repeat referrals</span><strong>27.0%</strong></div>
-<div class="metric"><span class="note">Multi-program clients</span><strong>20.9%</strong></div>
-<div class="metric"><span class="note">Repeat service</span><strong>38.6%</strong></div>
-<div class="metric"><span class="note">Latest 3-mo service conversion</span><strong>66.7%</strong></div>
-</div></section>
-<section class="card"><h2>Latest month</h2><div class="metric-list">
-<div class="metric"><span class="note">Month</span><strong>2026-06</strong></div>
-<div class="metric"><span class="note">Referrals</span><strong>217</strong></div>
-<div class="metric"><span class="note">Service conversion</span><strong>67.7%</strong></div>
-<div class="metric"><span class="note">Avg. days to service</span><strong>12.34</strong></div>
-</div></section></div>
-<section class="card section"><h2>Selected site/program rankings</h2>
-<table><thead><tr><th>Rank</th><th>Site</th><th>Program</th><th>Service rate</th><th>Avg. days</th><th>No-show rate</th></tr></thead><tbody>
-<tr><td>1</td><td>Central</td><td>Benefits</td><td>71.5%</td><td>11.49</td><td>16.5%</td></tr>
-<tr><td>2</td><td>North</td><td>Benefits</td><td>71.4%</td><td>11.52</td><td>15.2%</td></tr>
-<tr><td>3</td><td>West</td><td>Benefits</td><td>71.0%</td><td>12.07</td><td>18.8%</td></tr>
-<tr><td>16</td><td>West</td><td>Housing Support</td><td>59.2%</td><td>12.20</td><td>16.7%</td></tr>
-<tr><td>15</td><td>Central</td><td>Housing Support</td><td>59.9%</td><td>12.53</td><td>17.5%</td></tr>
-<tr><td>14</td><td>Central</td><td>Employment</td><td>62.0%</td><td>12.59</td><td>17.4%</td></tr>
-</tbody></table>
-<p class="note">Shows the top three and bottom three combinations by referral-to-service conversion.</p></section>
-<p class="note section">All data are synthetic. This dashboard demonstrates operational analytics and stakeholder reporting, not real program performance.</p>
-</main></body></html>
+<body>
+<main>
+  <h1>Service Operations & Client Journey</h1>
+  <p class="subtitle">Synthetic operational dashboard • 18-month referral window • SQL-first analytical workflow</p>
+
+  <div class="grid kpis">
+    <div class="card">
+      <div class="kpi-label">Referrals</div>
+      <div class="kpi-value">3,968</div>
+    </div>
+    <div class="card">
+      <div class="kpi-label">Referral → Intake</div>
+      <div class="kpi-value">85.3%</div>
+    </div>
+    <div class="card">
+      <div class="kpi-label">Referral → Service</div>
+      <div class="kpi-value">66.8%</div>
+    </div>
+    <div class="card">
+      <div class="kpi-label">Avg. Days to Service</div>
+      <div class="kpi-value">12.03</div>
+    </div>
+  </div>
+
+  <div class="grid two section">
+    <section class="card">
+      <h2>Referral funnel</h2>
+      <div class="funnel-row">
+        <div class="funnel-head"><span>Referred</span><strong>3,968</strong></div>
+        <div class="bar"><span style="width:100.0%"></span></div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-head"><span>Completed intake</span><strong>3,384 · 85.3%</strong></div>
+        <div class="bar"><span style="width:85.3%"></span></div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-head"><span>Received service</span><strong>2,652 · 66.8%</strong></div>
+        <div class="bar"><span style="width:66.8%"></span></div>
+      </div>
+      <p class="note">Conversion is calculated from referral records, not from completed cases only.</p>
+    </section>
+
+    <section class="card">
+      <h2>Operational quality</h2>
+      <div class="metric-list">
+        <div class="metric"><span class="note">Service SLA among served</span><strong>75.0%</strong></div>
+        <div class="metric"><span class="note">No-show rate</span><strong>16.6%</strong></div>
+        <div class="metric"><span class="note">Cancellation rate</span><strong>8.8%</strong></div>
+        <div class="metric"><span class="note">Goals-met closure</span><strong>58.1%</strong></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="card section">
+    <h2>Referral channel performance</h2>
+    <table>
+      <thead><tr><th>Channel</th><th>Referrals</th><th>Intake rate</th><th>Service rate</th><th>Avg. days to service</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Partner Referral</td>
+          <td>1,633</td>
+          <td>90.2%</td>
+          <td>71.0%</td>
+          <td>12.21</td>
+        </tr>
+        
+        <tr>
+          <td>Self Referral</td>
+          <td>1,146</td>
+          <td>80.7%</td>
+          <td>65.3%</td>
+          <td>11.75</td>
+        </tr>
+        
+        <tr>
+          <td>Walk-In</td>
+          <td>494</td>
+          <td>87.6%</td>
+          <td>64.4%</td>
+          <td>11.43</td>
+        </tr>
+        
+        <tr>
+          <td>Hotline</td>
+          <td>695</td>
+          <td>79.6%</td>
+          <td>61.3%</td>
+          <td>12.46</td>
+        </tr>
+        </tbody>
+    </table>
+  </section>
+
+  <div class="grid two section">
+    <section class="card">
+      <h2>Repeat-service behavior</h2>
+      <div class="metric-list">
+        <div class="metric"><span class="note">Repeat referrals</span><strong>27.0%</strong></div>
+        <div class="metric"><span class="note">Multi-program clients</span><strong>20.9%</strong></div>
+        <div class="metric"><span class="note">Repeat service</span><strong>38.6%</strong></div>
+        <div class="metric"><span class="note">Latest 3-mo service conversion</span><strong>66.6%</strong></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Latest month</h2>
+      <div class="metric-list">
+        <div class="metric"><span class="note">Month</span><strong>2026-06</strong></div>
+        <div class="metric"><span class="note">Referrals</span><strong>217</strong></div>
+        <div class="metric"><span class="note">Service conversion</span><strong>67.7%</strong></div>
+        <div class="metric"><span class="note">Avg. days to service</span><strong>12.34</strong></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="card section">
+    <h2>Selected site/program rankings</h2>
+    <table>
+      <thead><tr><th>Rank</th><th>Site</th><th>Program</th><th>Service rate</th><th>Avg. days</th><th>No-show rate</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Central</td>
+          <td>Benefits</td>
+          <td>71.5%</td>
+          <td>11.49</td>
+          <td>16.5%</td>
+        </tr>
+        
+        <tr>
+          <td>2</td>
+          <td>North</td>
+          <td>Benefits</td>
+          <td>71.4%</td>
+          <td>11.52</td>
+          <td>15.2%</td>
+        </tr>
+        
+        <tr>
+          <td>3</td>
+          <td>West</td>
+          <td>Benefits</td>
+          <td>71.0%</td>
+          <td>12.07</td>
+          <td>18.8%</td>
+        </tr>
+        
+        <tr>
+          <td>16</td>
+          <td>West</td>
+          <td>Housing Support</td>
+          <td>59.2%</td>
+          <td>12.20</td>
+          <td>16.7%</td>
+        </tr>
+        
+        <tr>
+          <td>15</td>
+          <td>Central</td>
+          <td>Housing Support</td>
+          <td>59.9%</td>
+          <td>12.53</td>
+          <td>17.5%</td>
+        </tr>
+        
+        <tr>
+          <td>14</td>
+          <td>Central</td>
+          <td>Employment</td>
+          <td>62.0%</td>
+          <td>12.59</td>
+          <td>17.4%</td>
+        </tr>
+        </tbody>
+    </table>
+    <p class="note">Shows the top three and bottom three combinations by referral-to-service conversion.</p>
+  </section>
+
+  <p class="note section">All data are synthetic. This dashboard demonstrates operational analytics and stakeholder reporting, not real program performance.</p>
+</main>
+</body>
+</html>
