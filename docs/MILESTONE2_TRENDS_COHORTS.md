@@ -63,7 +63,7 @@ The lowest fully observed cohort is:
 - 8 repeats within 90 days
 - **5.2% repeat rate**
 
-Because all data are synthetic, these differences demonstrate cohort methodology rather than real-world client behavior.
+Because all data are synthetic, these differences illustrate cohort methodology rather than real-world client behavior.
 
 ## Site/program rankings
 
@@ -85,7 +85,7 @@ Lowest three combinations:
 | 15 | Central | Housing Support | **59.9%** | 12.53 | 17.5% |
 | 14 | Central | Employment | **62.0%** | 12.59 | 17.4% |
 
-## SQL techniques demonstrated
+## SQL techniques
 
 Milestone 2 adds clear examples of:
 
@@ -104,4 +104,4 @@ Milestone 2 adds clear examples of:
 
 **Complete**
 
-Milestone 2 feeds the completed dashboard marts and stakeholder-facing reporting layer documented in Milestone 3.
+Milestone 2 feeds the completed dashboard marts and reporting layer documented in Milestone 3.
