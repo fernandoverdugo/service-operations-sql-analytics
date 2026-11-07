@@ -36,7 +36,7 @@ The project follows a SQL-first operational analytics workflow:
 - analyze conversion funnels, SLAs, no-shows, cohorts, and trends;
 - use window functions for rolling metrics and rankings;
 - create reporting marts that separate business logic from presentation;
-- translate analysis into management-facing follow-up priorities;
+- translate analysis into operational follow-up priorities;
 - deliver a validated dashboard and reproducible reporting pipeline.
 
 [View the live dashboard](https://fernandoverdugo.github.io/service-operations-sql-analytics/dashboard.html) · [Read the KPI dictionary](docs/KPI_DICTIONARY.md)
