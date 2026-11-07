@@ -17,7 +17,7 @@ The project emphasizes:
 - repeat-service behavior
 - SQL window functions
 - dashboard marts
-- management-facing visualization
+- operational visualization
 - reproducible validation
 
 All data are synthetic.
@@ -138,7 +138,7 @@ Three dedicated dashboard marts separate business logic from presentation:
 2. monthly trend mart
 3. site/program performance mart
 
-These feed a concise management-facing HTML dashboard.
+These feed a concise HTML dashboard for operational review.
 
 This architecture keeps KPI definitions in SQL rather than embedding them inside visualization code.
 
@@ -152,4 +152,4 @@ The project connects the end-to-end workflow from relational data through operat
 
 **relational data → SQL analysis → validated KPIs → cohorts and rankings → dashboard marts → stakeholder reporting**
 
-It complements more research-oriented and predictive projects by emphasizing SQL, operational decision support, and management-facing communication.
+It complements more research-oriented and predictive projects by emphasizing SQL, operational decision support, and clear reporting.
