@@ -2,7 +2,7 @@
 
 ## Analytical scope
 
-This project simulates a multi-site public-service organization and shows how a Data Analyst can move from normalized operational tables to stakeholder-ready reporting.
+This project simulates a multi-site public-service organization and follows the workflow from normalized operational tables to decision-ready reporting.
 
 It is intentionally SQL-first.
 
